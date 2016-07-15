@@ -1,0 +1,69 @@
+#!/bin/bash
+
+PLUGIN_ROOT='plugins';
+PLUGINS_INSTALLED=()
+ENVIRONMENT_ROOT=`pwd`"/"`dirname $0`
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "${bold}Welcome${normal}, right now i am going to install your environment setup."
+sleep 0.5
+echo "Looking for installation instructions in ${bold}environment.conf${normal}..."
+echo ""
+sleep 1.5
+
+# Ask for the administrator password upfront
+sudo -v
+
+environment_install() {
+
+    local "${@}"
+    local plugin=$1
+    local path="${ENVIRONMENT_ROOT}/$PLUGIN_ROOT/$1"
+
+    echo "[${bold}INFO${normal}] Trying to install ${bold}$path${normal}..."
+
+    # Check if plugin exists.
+    if [ -f $path ];
+    then
+        source $path; 
+        local install="_install";
+        local req="_requirements";
+        
+        # validate plugin
+        if function_exists $plugin$req && function_exists $plugin$install
+        then
+            # check if the requirements are met.
+            if $plugin$req
+            then
+                # Install the plugin
+                $plugin$install;     
+                
+                PLUGINS_INSTALLED=("${PLUGINS_INSTALLED[@]}" $plugin);  
+
+                echo "[${bold}OK${normal}] Installation completed"          
+            else
+               echo "[${bold}ERROR${normal}] Could not install ${bold}$path${normal}, requirements not met."
+               echo ""
+               exit 1;
+            fi
+        else 
+            echo "[${bold}ERROR${normal}] ${bold}$path${normal} is not a valid environment plugin."
+            echo ""
+            exit 1; 
+        fi
+        
+    else
+        echo "[${bold}ERROR${normal}] Environment plugin ${bold}$path${normal} does not exist."
+        echo ""
+        exit 1;
+    fi    
+}
+
+function_exists() {
+    declare -f -F $1 > /dev/null
+    return $?
+}
+
+source "${ENVIRONMENT_ROOT}/environment.conf"
