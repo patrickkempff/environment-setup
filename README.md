@@ -1,6 +1,6 @@
 # Enviroment Setup
 
-A modulair approach to initialize a (development) environment. Some plugins like homebrew, iterm and quicklook will only work on osx. It is possible to disable them in the [enviroment.conf](enviroment.conf) file. 
+A modulair approach to initialize a (development) environment. Some plugins like homebrew, iterm and quicklook will only work on osx. It is possible to disable them in the [environment.conf](environment.conf) file. 
 
 The goal of this approach is to make it easy to custimize and creation of custom plugins.
 
@@ -10,14 +10,14 @@ Start by cloning the repo:
 
 	git clone https://github.com/patrickkempff/environment-setup.git && cd environment-setup
 
-and run the setup by typing the following command, the plugins configured in [enviroment.conf](enviroment.conf) will be installed
+and run the setup by typing the following command, the plugins configured in [environment.conf](environment.conf) will be installed
 
 	./install
 
 
 ## Plugins
 
-To enable/disable certain plugins take a look at the [enabled.conf](enabled.conf) file.
+To enable/disable certain plugins take a look at the [environment.conf](environment.conf) file.
 
 ### Homebrew
 
