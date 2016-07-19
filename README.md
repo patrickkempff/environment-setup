@@ -1,4 +1,4 @@
-# Enviroment Setup
+# Environment Setup
 
 A modulair approach to initialize a (development) environment. Some plugins like homebrew, iterm and quicklook will only work on osx. It is possible to disable them in the [environment.conf](environment.conf) file. 
 
