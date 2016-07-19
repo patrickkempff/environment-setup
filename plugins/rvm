@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rvm_requirements() {
+    return 0;
+}
+
+rvm_install() {
+    if test ! $(which rvm); then 
+        \curl -sSL https://get.rvm.io | bash -s stable --ruby
+    fi
+}

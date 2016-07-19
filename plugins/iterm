@@ -1,0 +1,45 @@
+#!/bin/bash
+
+iterm_requirements() {
+    # Homebrew is required.
+    if test ! $(which brew); then
+        return 1;
+    fi
+
+    return 0;
+}
+
+iterm_install() {
+
+    # Install Cask
+    #brew install caskroom/cask/brew-cask
+    brew tap caskroom/versions
+
+    # Core casks
+    brew cask install --appdir="~/Applications" iterm2
+
+    # Install the Solarized Dark theme for iTerm
+    start_if_needed iTerm
+    # Use a modified version of the Solarized Dark theme by default in Terminal.app    
+    open "${ENVIRONMENT_ROOT}/templates/terminal/DimmedMonokai.itermcolors"
+        
+    # Remove outdated versions from the cellar.
+    brew cleanup    
+}
+
+
+start_if_needed() {
+  local grep_name="[${1:0:1}]${1:1}"
+
+  if [[ -z $(ps aux | grep -e "${grep_name}") ]]; then
+    if [ -e ~/Applications/$1.app ]; then
+      open ~/Applications/$1.app
+    else
+      if [ -e /Applications/$1.app ]; then
+        open /Applications/$1.app
+      fi
+    fi
+  fi
+
+  true
+}

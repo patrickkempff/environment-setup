@@ -1,0 +1,15 @@
+#!/bin/bash
+
+nvm_requirements() {
+    return 0;
+}
+
+nvm_install() {
+    if test ! $(which nvm); then 
+        \curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+    fi
+}
+
+
+
+
