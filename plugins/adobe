@@ -1,0 +1,15 @@
+#!/bin/bash
+
+adobe_requirements() {
+    return 0;
+}
+
+adobe_install() {
+
+    # Install Cask
+    brew install caskroom/cask/brew-cask
+    brew tap caskroom/versions
+    brew cask install --appdir="~/Applications" adobe-creative-cloud
+
+    open "/usr/local/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.app"
+}
