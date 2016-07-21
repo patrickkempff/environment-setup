@@ -19,6 +19,21 @@ and run the setup by typing the following command, the plugins configured in [en
 
 To enable/disable certain plugins take a look at the [environment.conf](environment.conf) file.
 
+Example:
+
+```
+environment_install homebrew
+environment_install macos
+environment_install rvm
+environment_install nvm
+environment_install iterm
+environment_install vagrant
+environment_install adobe
+environment_install apps
+environment_install quicklook
+```
+
+
 ### Homebrew
 
 The homebrew plugin will install homebrew itself and several homebrew packages like GNU moreutils, bash 4, wget and git. Take a look in [plugins/homebrew](plugins/homebrew) for more information.
@@ -34,6 +49,18 @@ Installs RVM. See [plugins/rvm](plugins/rvm) for more information.
 ### NVM
 
 Installs NVM. See [plugins/nvm](plugins/nvm) for more information.
+
+### Vagrant
+
+Installs vagrant and virtualbox with virtualbox extension pack. More info [plugins/vagrant](plugins/vagrant)
+
+### Adobe Creative Cloud 
+
+This plugin installs the creative cloud app which can be used to install Photoshop, Illustrator, Lightroom, After Effects and more. See [plugins/adobe](plugins/adobe)		
+### iTerm
+
+Installs iTerm and adds the DimmedMonokai theme. See [plugins/iterm](plugins/iterm) for more information.
+
 	
 ### Apps
 
@@ -42,7 +69,6 @@ Installs the latest versions of the following apps:
 * iTerm2
 * VirtualBox
 * VirtualBox Extension Pack
-* Vagrant
 * MacDown
 * 1Password
 * Google Chrome
@@ -50,11 +76,6 @@ Installs the latest versions of the following apps:
 * Skype
 
 For more information see [plugins/apps](plugins/apps).
-		
-	
-### iTerm
-
-Installs iTerm and adds the DimmedMonokai theme. See [plugins/iterm](plugins/iterm) for more information.
 		
 ### Quicklook
 
