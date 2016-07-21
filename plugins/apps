@@ -15,13 +15,7 @@ apps_install() {
     brew install caskroom/cask/brew-cask
     brew tap caskroom/versions
 
-    # Core casks
-    brew cask install --appdir="~/Applications" iterm2
-
     # Development tool casks
-    brew cask install --appdir="/Applications" virtualbox
-    brew cask install --appdir="/Applications" virtualbox-extension-pack
-    brew cask install --appdir="/Applications" vagrant
     brew cask install --appdir="/Applications" macdown
 
     # Misc casks
@@ -29,6 +23,7 @@ apps_install() {
     brew cask install --appdir="/Applications" google-chrome
     brew cask install --appdir="/Applications" firefox
     brew cask install --appdir="/Applications" skype
+    brew cask install --appdir="/Applications" vlc
     
     # Remove outdated versions from the cellar.
     brew cleanup    

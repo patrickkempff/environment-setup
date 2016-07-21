@@ -1,0 +1,15 @@
+#!/bin/bash
+
+adobe_requirements() {
+    return 0;
+}
+
+adobe_install() {
+
+    # Install Cask
+    brew cask install --appdir="/Applications" virtualbox
+    brew cask install --appdir="/Applications" virtualbox-extension-pack
+    brew cask install --appdir="/Applications" vagrant
+}
+    
+    
