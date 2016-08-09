@@ -28,9 +28,12 @@ environment_install rvm
 environment_install nvm
 environment_install iterm
 environment_install vagrant
+environment_install macdown
 environment_install adobe
 environment_install apps
 environment_install quicklook
+environment_install vscode
+environment_install docker
 ```
 
 
@@ -54,22 +57,30 @@ Installs NVM. See [plugins/nvm](plugins/nvm) for more information.
 
 Installs vagrant and virtualbox with virtualbox extension pack. More info [plugins/vagrant](plugins/vagrant)
 
-### Adobe Creative Cloud 
-
-This plugin installs the creative cloud app which can be used to install Photoshop, Illustrator, Lightroom, After Effects and more. See [plugins/adobe](plugins/adobe)		
 ### iTerm
 
 Installs iTerm and adds the DimmedMonokai theme. See [plugins/iterm](plugins/iterm) for more information.
 
+### MacDown
+
+Installs the latest version of MacDown. See [plugins/macdown](plugins/macdown) for more information.
+
+### Visual Studio Code
+
+This plugin installs the latest version of Visual Studio Code. See [plugins/vscode](plugins/vscode) for more information.
+
+### Docker
+
+This plugin installs the latest version of Docker. See [plugins/docker](plugins/docker) for more information.
+	
+### Adobe Creative Cloud 
+
+This plugin installs the creative cloud app which can be used to install Photoshop, Illustrator, Lightroom, After Effects and more. See [plugins/adobe](plugins/adobe)			
 	
 ### Apps
 
 Installs the latest versions of the following apps:
 
-* iTerm2
-* VirtualBox
-* VirtualBox Extension Pack
-* MacDown
 * 1Password
 * Google Chrome
 * Firefox
