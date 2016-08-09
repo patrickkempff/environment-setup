@@ -1,10 +1,10 @@
 #!/bin/bash
 
-adobe_requirements() {
+vagrant_requirements() {
     return 0;
 }
 
-adobe_install() {
+vagrant_install() {
 
     # Install Cask
     brew cask install --appdir="/Applications" virtualbox
