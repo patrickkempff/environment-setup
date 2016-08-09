@@ -1,0 +1,24 @@
+#!/bin/bash
+
+macdown_requirements() {
+    # Homebrew is required.
+    if test ! $(which brew); then
+        return 1;
+    fi
+
+    return 0;
+}
+
+macdown_install() {
+
+    # Install Cask
+    #brew install caskroom/cask/brew-cask
+    brew tap caskroom/versions
+
+    # Install macdown
+    brew cask install --appdir="~/Applications" macdown
+
+    # Remove outdated versions from the cellar.
+    brew cleanup
+}
+
