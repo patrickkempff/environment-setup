@@ -15,9 +15,6 @@ apps_install() {
     brew install caskroom/cask/brew-cask
     brew tap caskroom/versions
 
-    # Development tool casks
-    brew cask install --appdir="/Applications" macdown
-
     # Misc casks
     brew cask install --appdir="/Applications" 1password
     brew cask install --appdir="/Applications" google-chrome
